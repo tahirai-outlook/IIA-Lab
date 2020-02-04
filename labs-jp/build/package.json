@@ -1,0 +1,14 @@
+{
+  "name": "iotlab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "buildlabs.js",
+  "scripts": {
+    "start": "node buildlabs.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mdpdf": "^2.1.0"
+  }
+}
