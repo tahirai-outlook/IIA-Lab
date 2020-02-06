@@ -8,7 +8,7 @@
 
 3. ターゲット システム アーキテクチャを更新して、下図に示すように「ARM」が表示されるようにします。![](./media/1_vs3.png)
 
-4. ターゲット システムを「Device」から「Remote Machine」に変更して、HummingBoard デバイスの IP アドレスを入力します。これは、HummingBoard デバイスを表示するカメラの画面上にあります。既に **\[ Auto]** にリストされている場合があります。![](./media/1_vs2.png)
+4. ターゲット システムを「Device」から「Remote Machine」に変更して、HummingBoard デバイスの IP アドレスを入力します。これは、HummingBoard デバイスを表示するカメラの画面上にあります。既に **\[Auto]** にリストされている場合があります。![](./media/1_vs2.png)
 
 5. 再び VisualStudio でプロジェクトを実行し (\[Remote Machine] の横にある緑色の矢印を押すことで実行)、それを HummingBoard 上でテストします。
 
@@ -22,7 +22,7 @@
 
 2. `Project > Publish > Create App Packages...`をクリックします。![](./media/1_createapppackages.png)
 
-3. **\[Sideloading]** を選択してアプリケーションを配布するよう選択し、\[自動更新を有効にする] のチェックをオフにします。  **\[Next]** をクリックし、\[Select signing method] を既定のままにして、再度 **\[Next]** をクリックします。![](./media/1_createapppackages4.png)
+3. **\[Sideloading]** を選択してアプリケーションを配布するよう選択し、\[Enable automatic updates] のチェックをオフにします。  **\[Next]** をクリックし、\[Select signing method] を defaults のままにして、再度 **\[Next]** をクリックします。![](./media/1_createapppackages4.png)
 
 4. \[Generate app bundle] で \[Never] を選択し、アーキテクチャとして \[ARM] を選択します。![](./media/1_createapppackages2.png)  
 
