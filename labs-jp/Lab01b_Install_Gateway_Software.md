@@ -13,27 +13,27 @@
 
 1. Windows デバイス ポータルを開きます。これは、Web ブラウザーを開き、デバイスの IP アドレス (以前のステップ バイ ステップの手順で確認) を入力します。このアドレスの後に「8080」が続きます (例: http://192.168.1.60:8080)。
 
-2. Windows デバイス ポータルで、左側のメニューから **\[アプリ]** を選択し、次に **\[アプリ マネージャー]** を選択します。![](media/lab01/1_apps_manager.png)
+2. Windows デバイス ポータルで、左側のメニューから **\[Apps]** を選択し、次に **\[App manager]** を選択します。![](media/lab01/1_apps_manager.png)
 
 **センサー アプリケーション ソフトウェアをインストールする**
 
-1. **\[アプリケーション パッケージの選択]** で **\[ファイルの選択]** ボタンを選択します。
+1. **\[Choose File]** で **\[Select the application package]** ボタンを選択します。
 
 2. **C:\\Labs\\IoTLabs.TestApp** でダウンロードされたファイルの場所を参照し、「**IoTLabs.TestApp**」で始まり、「**msixbundle**」で終わるファイルを選択します。![](media/lab01/1_choose_appxbundle.png)
 
-3. **\[オプションのパッケージ選択を許可する]** を選択し、**\[次へ]** をクリックします。
+3. **\[Allow me to select optional packages]** を選択し、**\[Next]** をクリックします。
 
-4. **\[ファイルの選択]** ボタンを選択して、「Microsoft.NET.CoreFramework.Debug.2.2.appx」を選択します。
+4. **\[Choose File]** ボタンを選択して、「Microsoft.NET.CoreFramework.Debug.2.2.appx」を選択します。
 
-5. **\[ファイルの選択]** ボタンを選択して、「Microsoft.NET.CoreRuntime2.2.appx」を選択します。
+5. **\[Choose File]** ボタンを選択して、「Microsoft.NET.CoreRuntime2.2.appx」を選択します。
 
-6. **\[ファイルの選択]** ボタンを選択して、「Microsoft.VCLibs.ARM.Debug.14.00.appx」を選択します。![](media/lab01/1_choose_optional_packages.png)
+6. **\[Choose File]** ボタンを選択して、「Microsoft.VCLibs.ARM.Debug.14.00.appx」を選択します。![](media/lab01/1_choose_optional_packages.png)
 
-7. **\[インストール]** ボタンをクリックします。![](media/lab01/1_install.png)
+7. **\[Install]** ボタンをクリックします。![](media/lab01/1_install.png)
 
-8. アプリケーションでアップロードを行うのに少し時間がかかり、その後インストールのために一時停止します。インストールが終了すると、**「パッケージが正常に登録されました」**というメッセージが最後に表示されます。
+8. アプリケーションでアップロードを行うのに少し時間がかかり、その後インストールのために一時停止します。インストールが終了すると、**「Package Successfully Registered」**というメッセージが最後に表示されます。
 
-9. ****\[完了]**** をクリックします。
+9. ****\[Done]**** をクリックします。
 
 10. このアプリケーションがアプリ リストに表示されているはずです。
 
