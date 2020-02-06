@@ -1,75 +1,62 @@
-# Lab 1b - Install the Sensor Gateway Application Software
+# ラボ 1b - センサー ゲートウェイ アプリケーション ソフトウェアをインストールする
+
 -------------------------------------------------
 
-The sensor application is the piece of software that reads the values from the sensors and sends them to the cloud. The sensor application is critical to the supply of data from the device and into Azure IoT Central.
 
-Preparation
------------
+センサー アプリケーションとは、センサーから値を読み取り、それをクラウドに送信するソフトウェアです。センサー アプリケーションは、デバイスからのデータを Azure IoT Central に供給するために不可欠です。
 
-Before going through the installation guide below, ensure that your device is connect to the internet and you have retrieved your device IP address. 
+## 準備
 
-**Open the App Manager in the Windows Device Portal**
+下記のインストール ガイドを読み進める前に、デバイスがインターネットに接続されており、デバイスの IP アドレスを取得していることを確認してください。
 
-1. Open the Windows Device Portal. This can be done by opening a web browser and typing in your device IP address (found in previous step by step instructions) followed by 8080 (eg. http://192.168.1.60:8080)
+**Windows デバイス ポータルでアプリ マネージャーを開く**
 
-1. In the Windows Device Portal, Select **Apps** on the left menu and then **App manager**
-![](media/lab01/1_apps_manager.png)
+1. Windows デバイス ポータルを開きます。これは、Web ブラウザーを開き、デバイスの IP アドレス (以前のステップ バイ ステップの手順で確認) を入力します。このアドレスの後に「8080」が続きます (例: http://192.168.1.60:8080)。
 
-**Install the Sensor Application Software**
+2. Windows デバイス ポータルで、左側のメニューから **\[アプリ]** を選択し、次に **\[アプリ マネージャー]** を選択します。![](media/lab01/1_apps_manager.png)
 
-1. Select **[Choose File]** button in the **“Select the application package”**
+**センサー アプリケーション ソフトウェアをインストールする**
 
-1. Browse to the location of the downloaded files in **C:\Labs\IoTLabs.TestApp** and select the file ending in starting with **IoTLabs.TestApp** and ending in **.msixbundle**.
-![](media/lab01/1_choose_appxbundle.png)
+1. **\[アプリケーション パッケージの選択]** で **\[ファイルの選択]** ボタンを選択します。
 
-1. Select the **“Allow me to select optional packages”** and click **Next**
+2. **C:\\Labs\\IoTLabs.TestApp** でダウンロードされたファイルの場所を参照し、「**IoTLabs.TestApp**」で始まり、「**msixbundle**」で終わるファイルを選択します。![](media/lab01/1_choose_appxbundle.png)
 
-1. Select the **[Choose File]** button, and select Microsoft.NET.CoreFramework.Debug.2.2.appx
+3. **\[オプションのパッケージ選択を許可する]** を選択し、**\[次へ]** をクリックします。
 
-1. Select the **[Choose File]** button, and select Microsoft.NET.CoreRuntime2.2.appx
+4. **\[ファイルの選択]** ボタンを選択して、「Microsoft.NET.CoreFramework.Debug.2.2.appx」を選択します。
 
-1. Select the **[Choose File]** again, and select Microsoft.VCLibs.ARM.Debug.14.00.appx
-![](media/lab01/1_choose_optional_packages.png)
+5. **\[ファイルの選択]** ボタンを選択して、「Microsoft.NET.CoreRuntime2.2.appx」を選択します。
 
-1. Click the **Install** button
-![](media/lab01/1_install.png)
+6. **\[ファイルの選択]** ボタンを選択して、「Microsoft.VCLibs.ARM.Debug.14.00.appx」を選択します。![](media/lab01/1_choose_optional_packages.png)
 
-6. The application will take a little while to upload and then will pause while it installs. When it has finished installing it will give you a **“Package Successfully Registered”** message at the end with it’s complete.
+7. **\[インストール]** ボタンをクリックします。![](media/lab01/1_install.png)
 
-7. Click **Done**
+8. アプリケーションでアップロードを行うのに少し時間がかかり、その後インストールのために一時停止します。インストールが終了すると、**「パッケージが正常に登録されました」**というメッセージが最後に表示されます。
 
-8. The application should now show up in the Apps list.
+9. ****\[完了]**** をクリックします。
 
-9. You should now be able to select the app to startup when the device boots. 
-![](media/lab01/1_select_startup.png)
+10. このアプリケーションがアプリ リストに表示されているはずです。
 
-10. View the camera app on you Lab PC or take a screenshot in the Windows Device Portal to see the application start. 
+11. これで、デバイスの起動時にアプリが開始するよう選択できます。![](media/lab01/1_select_startup.png)
 
-Software Installation Complete
-------------------------------
+12. ラボ用のPC でカメラ アプリを表示するか、Windows デバイス ポータルでスクリーンショットを撮って、アプリケーションが開始することを確認します。
 
-You have successfully installed your Windows 10 IoT Core sensor device and software.
+## ソフトウェアのインストールの完了
 
-When the application loads correctly you should see sensor data on the screen. If there are red lines on the sensors, unplug the sensor and plug it back in again. 
+Windows 10 IoT Core センサー デバイスおよびソフトウェアが正常にインストールされました。
+
+アプリケーションが正常に読み込まれると、画面上にセンサー データが表示されるはずです。センサーに赤い線が表示されている場合、センサーの電源プラグを抜いて、もう一度差し込んでください。
 
 ![](media/lab01/AwareThings.SensorData.jpg)
 
+次に、「**ラボ 2 – デバイスを Azure IoT Central** **に接続する** ([デバイスを Azure IoT Central に接続する)](./Lab02.md)」に進みます。
 
-Now proceed to **Lab 2 – Connect your device to Azure IoT Central**
-[Connect your device to Azure IoT Central](./Lab02.md)
+## SensorTile のトラブルシューティング
 
+1. SensorTile が接続されていることを確認します。それが Hummingboard に接続されていることを確認し、\[Processes] メニューを開き、\[Run command] を選択します。![デバイス ポータル](./media/1_deviceportal1.png)
 
-Troubleshooting SensorTile
-----------------------------------
+2. **「devcon status USB\\VID\_0483\*」**を入力して、Enter キーを押して、デバイスが接続された SensorTile を認識できているかどうかを確認します。
 
-1. To test the SensorTile is connected. Make sure it's plugged into the Hummingboard, then open the Processes Menu, Select Run command
-![Device Portal](./media/1_deviceportal1.png)
+3. 「**Name: USB Serial Device**」が「Running」のステータスで表示されているはずです。![SensorTile が接続済み](./media/1_SensorTileConnected.png)
 
-2. Type **"devcon status USB\VID_0483\*"** and hit enter to see if the device can see the connected SensorTile
-
-3. You should see **Name: USB Serial Device** with status of Running
-![SensorTile Connected](./media/1_SensorTileConnected.png)
-
-4. If there are still red lines on the sensors then use the Windows Device Portal App Manager to restart the application. 
-![](media/lab01/1_IoTLabs_App_Sensor_Failed.jpg)
-![](media/lab01/WDP.ApplicationRestart.png)
+4. センサーにまだ赤い線が表示されている場合は、Windows デバイス ポータルのアプリ マネージャーを使用してアプリケーションを再起動してください。![](media/lab01/1_IoTLabs_App_Sensor_Failed.jpg) ![](media/lab01/WDP.ApplicationRestart.png)

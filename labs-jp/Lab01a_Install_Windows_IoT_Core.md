@@ -1,139 +1,122 @@
-# Lab 1a - Getting started with Windows 10 IoT
+# ラボ 1a - Windows 10 IoT の利用を始める
 
-This lab covers setting up Windows 10 IoT Core on a SolidRun HummingBoard Edge board and deploying apps using Visual Studio.
+このラボでは、SolidRun HummingBoard Edge ボード上に Windows 10 IoT Core をセットアップし、Visual Studio を使用してアプリをデプロイしていきます。
 
-## Pre-requisites
-### Hardware
+## 用意するもの
+
+### ハードウェア
+
 * SolidRun HummingBoard Edge
-* MicroSD Card and Adapter 
+* MicroSD カードとアダプター
 * STM SensorTile.Box
-* Optional: USB HDMI Capture Card 
+* 任意: USB HDMI キャプチャ カード
 
-### Software
-* Windows 10 IoT Core Dashbaord 
-* Windows 10 IoT Core Firmware
+### ソフトウェア
 
+* Windows 10 IoT Core ダッシュボード
+* Windows 10 IoT Core ファームウェア
 
-## 1 - Installing Windows 10 IoT Core with IoT Dashboard
+## 1 - IoT ダッシュボードを使って Windows 10 IoT Core をインストールする
 
-Devices running Windows 10 IoT Core can be installed and configured using the IoT Dashboard. This tool makes it simple to get started and also provision Azure connectivity.
+Windows 10 IoT Core を実行するデバイスは、IoT ダッシュボードを使用してインストールおよび構成できます。このツールを使えば、使用を開始して Azure の接続を準備するのが簡単になります。
 
-### 1.1 - Installing IoT Dashboard
+### 1.1 - IoT ダッシュボードをインストールする
 
-1. **If you already have Windows 10 IoT Core Dashboard on your desktop, you can skip this step and move on to '1.2 Installing Windows 10 IoT Core'**
+1. **デスクトップ上に既に Windows 10 IoT Core ダッシュボードがインストールされている場合は、この手順をスキップして、「1.2 Windows 10 IoT Core をインストールする」に進んでください。**
 
-1. Open a browser window to: [http://go.microsoft.com/fwlink/?LinkID=708576](http://go.microsoft.com/fwlink/?LinkID=708576)  This will install a file to setup the data and tools required for the labs.  
-1. Double click on the setup.exe file which will launch the IoT Dashboard and verify the application starts correctly (by seeing the screen appear as shown below).
+2. ブラウザー ウィンドウで [http://go.microsoft.com/fwlink/?LinkID=708576](http://go.microsoft.com/fwlink/?LinkID=708576) を開いてください。これによって、ラボに必要なデータとツールをセットアップするためのファイルがインストールされます。
 
-![IoT Dashboard](./media/1_iotdashboardinitial.png)
+3. setup.exe ファイルをダブルクリックして IoT ダッシュボードを起動し、このアプリケーションが正しく開始することを確認します (以下に示す画面が表示されれば正しく機能しています)。
 
-### 1.2 - Installing Windows 10 IoT Core
+![IoT ダッシュボード](./media/1_iotdashboardinitial.png)
 
-1. Ensure your Hummingboard device power is unplugged. 
+### 1.2 - Windows 10 IoT Core をインストールする
 
-1. Take the Micro SD card and put it in the card reader. Ensure it's **not in the HummingBoard**, then plug the card reader into your PC. 
-![MicroSD](./media/5_microsd.jpg)
+1. お使いの Hummingboard デバイスの電源が入っていないことを確認します。
 
-1. Dismiss any messages to format the drive. Close all those windows that pop up.  
+2. マイクロ SD カードをカード リーダーに挿入します。**HummingBoard** に挿入しないようにしてください。その後、カード リーダーを PC に接続します。![マイクロ SD](./media/5_microsd.jpg)
 
-1. Open IoT Dashboard by typing **iot core** at the start menu
+3. ドライブをフォーマットするようにというメッセージが表示された場合は無視してください。ポップアップ表示されるウィンドウをすべて閉じます。
 
-1. Click **Setup a new device**
+4. スタート メニューで「**iot core**」と入力して、IoT ダッシュボードを開きます。
 
-1. Using the drop-down list, change the device type to **NXP [i.MX6/i.MX7/i.MX8]** and set the OS Build to **Custom**.
+5. **\[新しいデバイスをセットアップする]** をクリックします。
 
-1. Browse to the FFU file found in `C:/Labs`
+6. ドロップダウン リストを使用して、デバイスのタイプを「**NXP \[i.MX6/i.MX7/i.MX8]**」に変更し、OS のビルドを **\[カスタム]** に変更します。
 
-1. Name your device 'Lab-UserXX', where the XX referes to user number assigned to you. (found on the lower left of your lab pc screen)
+7. `C:/Labs` にある FFU ファイルを参照します。
 
-1. Add a New Administrator password "p@ssw0rd", and confirm.  
+8. デバイスに「Lab-UserXX」という名前を付けます。ここで、XX は割り当てられたユーザー番号を指します  (ラボの PC 画面の左下にある番号)。
 
-1. Accept the license agreement and click **Install**.
+9. 新しい管理者パスワードに「p@ssw0rd」を追加し、確認のためにもう一度入力します。
 
-![IoT Dashboard](./media/1_iotdashboard2.png)
+10. 使用許諾契約書に同意し、**\[インストール]** をクリックします。
 
-11. Windows Explorer may prompt you to format the drive, this message can safely be ignored, press **Continue**.  Allow the software to make changes to your device, if asked.
-1. It may take a few minutes for the Micro SD card to provision.
-1. Once complete, remove the Micro SD card from the adapter.
+![IoT ダッシュボード](./media/1_iotdashboard2.png)
 
+11. Windows エクスプローラーでドライブをフォーマットするよう求められる場合がありますが、このメッセージは無視しても問題ないため、**\[続行]** を押します。  ソフトウェアがデバイスに変更を加えることを許可するかどうかを尋ねられた場合は、許可してください。
+12. マイクロ SD カードが準備を行うには数分かかる場合があります。
+13. 完了したら、マイクロ SD カードをアダプターから取り出します。
 
+### 1.3 - ハードウェアを接続する
 
-### 1.3 - Plugging in your hardware
+![ハードウェア](./media/lab01/hardware_plugged_in.png)
 
-![Hardware](./media/lab01/hardware_plugged_in.png)
+1. マイクロ USB ケーブルを SensorTile に差し込み、もう一方の端末を HummingBoard に (PC ではなく) に接続します。
 
-1. Plug the Micro USB cable into your SensorTile and the other end into the HummingBoard (not your PC).
+2. イーサネット ケーブルを HummingBoard に接続します。
 
-1. Plug in the ethernet cable to your HummingBoard.
+3. マイクロ SD カードを HummingBoard に挿入します。
 
-1. Insert the Micro SD Card into your HummingBoard.
+4. HDMI アダプターを HummingBoard に接続し、USB 側を PC に接続された USB ハブに差し込みます。
 
-1. Plug the HDMI adapter into your HummingBoard and the USB end into the USB Hub attached to your PC. 
+### 1.4 - デバイスを起動する
 
-### 1.4 - Booting your device
+1. ラボ用の PC で、カメラ アプリケーションを開いて HummingBoard の起動時の出力を表示します。
 
-1. On your Lab PC, open the Camera application to view the output of your HummingBoard as it boots. 
+2. カメラ アプリの右上隅にあるカメラ サイクル ボタンを選択し、キャプチャ カードを選択します。
 
-1. Select the camera cycle button, found in the top right corner of the Camera App, and select the capture card.
+3. 電源ケーブルを HummingBoard に挿入します。
 
-1. Insert the Power Cable into your HummingBoard. 
+4. HummingBoard の初期設定が開始します。
 
-1. The HummingBoard will begin its initial setup. 
+**注意:** この初期ブート プロセスは 3 ～ 5 分かかります。初期設定の実行中に、数回再起動する場合があります。起動中にさまざまな画面が表示されますが、次の画面に移る前に 1 分程度かかる場合があります。このプロセス中に Windows ロゴが表示されれば、順調に進行しています。OOBE (Out of Box Experience) に達したら、続行することができます。
 
-**Note:** This initial boot process takes 3-5 minutes. It may reboot a couple times while it processes the initial setup. During boot you will see various screens that may take a minute before they proceed. If you see a Windows logo during this process thats a good sign. Once it reaches the Out of Box Experience (OOBE) you are ready to conitnue.  
+**注意: 画面、マウス、またはキーボードを使用して、IoT Core と対話することはできません。これは、ラボ用 PC に表示されている HDMI ディスプレイに過ぎません。この設定にはユーザー入力は必要ありません。OOBE 画面を介して自動的に順を追って実行されます。**
 
-**Note: You can not interact with the IoT Core using your screen, mouse or keyboard. It is just a HDMI display being shown on your Lab PC. The setup does not require any user input; it will automatically step through the OOBE screens.**
+**アドバイス:** 順番を間違えた場合は、HummingBoard の電源ケーブルを抜いてもう一度差し込んでデバイスを再起動し、ディスプレイがカメラ アプリにキャプチャされるようにします。
 
-**Hint:** If you get the order wrong, unplug and plug back in the Power Cable into the HummingBoard to reboot the device and for the display to capture to your camear app.
+### 1.5 - インストールを検証する
 
-### 1.5 - Validating your install
+1. HummingBoard の起動が完了したら、IoT ダッシュボードにライン項目が表示されます。このウィンドウを開いたままにして、デバイスの準備ができた場合に通知が表示されるようにできます。![IoT ダッシュボード内のデバイス](./media/lab01/1_validatinginstall.png)
 
-1. Once the HummingBoard has completed booting, a line entry will show in the IoT Dashboard. You can leave this window open to be notified when the device is ready. 
-![Device in IoT Dashboard](./media/lab01/1_validatinginstall.png)
+2. デバイスを右クリックして、**\[デバイス ポータルで開く]** を選択します。![デバイス ポータルを開く](./media/lab01/1_opendeviceportal.png)
 
-2. Right click on your device and select **Open in Device Portal** 
-![Open Device Portal](./media/lab01/1_opendeviceportal.png)
+**注意:** デバイスがリストに表示されない場合、デバイスの HDMI 出力を見て、それが完全に起動されていることを確認し、ディスプレイから IP アドレスを読み取ってそれをポート 8080 上のブラウザーに入力します。例えば、「http://192.168.1.40:8080」のように入力します。![デバイス ポータルを開く](./media/lab01/1_IoTCoreIPAddress.png)
 
-**Note:** if your device doesn't show in the list, look at the HDMI output from the device to ensure it's fully booted, and read the IP Address from the display and enter that in your browser on port 8080. For example: http://192.168.1.40:8080
-![Open Device Portal](./media/lab01/1_IoTCoreIPAddress.png)
+3. ブラウザーに、上記で設定した既定のユーザー名とパスワードを入力します。
 
-3. In your browser enter the default username and password, that we just set:
+| 名前| 値
+|----------|----------
+| ユーザー名| Administrator
+| パスワード| p@ssw0rd
 
-|Name    |Value|
-|--------|-----|
-|Username|Administrator|
-|Password|p@ssw0rd|
+これで、Windows 10 IoT Core がインストールされた IoT デバイスが正常に動作し、画面出力がセカンド スクリーンとして機能する Windows カメラに HDMI キャプチャ カードを介して表示されているはずです。
 
+次に、UWP ゲートウェイ アプリケーションのデプロイに進むことができます。
 
-You should now have a working IoT device with Windows 10 IoT Core installed, along with screen output being shown through the HDMI capture card to the Windows Camera app acting as a second screen. 
+ラボ 1b [アプリをサイドローディングによってデバイスにデプロイする](./Lab01b_Install_Gateway_Software.md)
 
+または
 
-Now you can proceed to deploying the UWP Gateway application
+ラボ 1c [アプリを Visual Studio でデバイスにデプロイする](./Lab01c.md)
 
-Lab 1b [Deploy Apps to your device via Sideloading](./Lab01b_Install_Gateway_Software.md)
+## ディスプレイのトラブルシューティング
 
-or
+1. HDMI キャプチャ カードに問題がある場合は、IoT デバイスの画面上のものを確認する別の方法として、Windows デバイス ポータルの組み込みの**スクリーンショット**コマンドを使用できます。
 
-Lab 1c
-[Deploy Apps to your device with Visual Studio](./Lab01c.md)
+2. Windows デバイス ポータルの **\[デバイス設定]** を選択し、右下の **\[スクリーンショット]** ボタンを押します。1 回目で壊れた画像のアイコンが表示される場合はもう一度試してください。![Windows デバイス ポータルのスクリーンショット](./media/lab01/1_screenshot.png)
 
+3. スクリーンショットを撮るのに使用できるもう 1 つのツールがラボ用 PC にインストールされています。PC のスタート メニューに「Aware」と入力して、スクリーンショット ツールを選択します。![AwareThings スクリーンショット ツール](./media/lab01/IoTScreenshotApp1a.png)
 
-
-Troubleshooting Display 
------------------------
-
-1. If you are having issues with the HDMI capture card then another way to see what is on the screen of the IoT device is to use the inbuilt **Screenshot** command on the Windows Device Portal. 
-
-2. Select **Device Settings** on the Windows Device Portal, in the bottom right press the **Screenshot** button. Try it twice if it shows the broken image icon the first time.
-![Windows Device Portal Screenshot](./media/lab01/1_screenshot.png)   
-
-3. An additional tool you can used is installed on your lab PC that can assist in taking screenshots. On your PC start menu type "Aware" and select the Screenshot tool. 
-![AwareThings Screenshot Tool](./media/lab01/IoTScreenshotApp1a.png) 
-
-4. Type in your IP address and select Get Screenshot. Refresh as often as you like to see updated images of what is in the device screen. 
-![AwareThings Screenshot Tool](./media/lab01/IoTScreenshotApp1b.png)
-
-
-
-
-
+4. IP アドレスを入力して、\[Get Screenshot] を選択します。必要に応じて更新して、デバイス画面上にあるものの更新されたイメージを表示します。![AwareThings スクリーンショット ツール](./media/lab01/IoTScreenshotApp1b.png)

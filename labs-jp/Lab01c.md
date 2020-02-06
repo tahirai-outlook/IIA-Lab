@@ -1,38 +1,31 @@
-# Lab 01c - Deploy Apps to your device with Visual Studio 
+# ラボ -01c - アプリを Visual Studio でデバイスにデプロイする
 
-## 1 - Deploy and debug with Visual Studio 2019
+## 1 - Visual Studio 2019 でデプロイおよびデバッグする
 
-1. Open up the first lab project found in [C:\Labs\content\src\IoTLabs.TestApp\IoTLabs.TestApp.sln](file:///C:\Labs\content\src\IoTLabs.TestApp\IoTLabs.TestApp.sln)  
+1. [C:\\Labs\\content\\src\\IoTLabs.TestApp\\IoTLabs.TestApp.sln](file:///C:\Labs\content\src\IoTLabs.TestApp\IoTLabs.TestApp.sln)にある最初のラボ プロジェクトを開きます。
 
-2. If prompted to log in with VisualStudio, simply close the window as no sign in is required.
+2. VisualStudio でログインするようプロンプトが表示された場合は、サインインは必要ではないため、ウィンドウを閉じてかまいません。
 
-3. Update the target system architecture to say 'ARM' as shown in the image below
-![](./media/1_vs3.png)
+3. ターゲット システム アーキテクチャを更新して、下図に示すように「ARM」が表示されるようにします。![](./media/1_vs3.png)
 
-4. Change target system from 'Device' to 'Remote Machine' and enter the IP address of your HummingBoard device. This can be found on the camera screen showing your HummingBoard device. It may already be listed in the **Auto Detected**
-![](./media/1_vs2.png)
+4. ターゲット システムを「Device」から「Remote Machine」に変更して、HummingBoard デバイスの IP アドレスを入力します。これは、HummingBoard デバイスを表示するカメラの画面上にあります。既に **\[自動検出]** にリストされている場合があります。![](./media/1_vs2.png)
 
-5. Run the project back in VisualStudio (by pressing the green arrow beside the Remote Machine) to test it on your HummingBoard. 
+5. 再び VisualStudio でプロジェクトを実行し (\[リモート マシン] の横にある緑色の矢印を押すことで実行)、それを HummingBoard 上でテストします。
 
-**Note:** the first deployment can take a few minutes.  You will know it has finished with the status message in the lower left corner of the app shows 'READY'. Then you should the app starting on your HummingBoard. 
+**注意:** 最初のデプロイには数分かかる場合があります。  アプリの左下隅にあるステータス メッセージに「準備完了」と表示されていれば、完了したことがわかります。その後、HummingBoard 上でアプリを起動してください。
 
-**Hint:** If no sensor data is displayed, try changing the USB port the SensorTile is connected through to another port on the HummingBoard. Stop the application in Visual Studio using the STOP button, then press the START button again. 
+**アドバイス:** センサー データが表示されていない場合、SensorTile が接続されている USB ポートを、HummingBoard 上の別のポートに変更してみてください。\[停止] ボタンを使用して Visual Studio 内のアプリケーションを停止し、次に再度 \[開始] ボタンを押します。
 
+## 2 - サイドローディングのためにアプリを .appx バンドルとして公開する
 
-## 2 - Publishing your app as an .appx bundle for side loading 
+1. Visual Studio の \[ソリューション エクスプローラー] タブで、\[Dashboard.xaml] をクリックします。
 
-1. In Visual Studio, in the Solution Explorer tab on the right, click on Dashboard.xaml 
+2. `Project > Publish > Create App Packages...`をクリックします。![](./media/1_createapppackages.png)
 
-2. Click ```Project > Publish > Create App Packages...```
-![](./media/1_createapppackages.png)v
+3. **\[サイドローディング]** を選択してアプリケーションを配布するよう選択し、\[自動更新を有効にする] のチェックをオフにします。  **\[次へ]** をクリックし、\[Select signing method] を既定のままにして、再度 **\[次へ]** をクリックします。![](./media/1_createapppackages4.png)
 
-3. Choose to distribute the application by **Sideloading** and uncheck "Enable automatic updates".  Click **Next** and leave the defaults for the 'Select signing method', click **Next** again.
-![](./media/1_createapppackages4.png)
+4. \[アプリ バンドルの生成] で \[しない] を選択し、アーキテクチャとして \[ARM] を選択します。![](./media/1_createapppackages2.png)  
 
-4. Select "Never" on "Generate app bundle" and select "ARM" as the Architecture 
-![](./media/1_createapppackages2.png)
+5. パッケージの作成が完了したら、リンクをクリックして .appx ファイルが作成されたことを確認します。![](./media/1_createapppackages5.png)
 
-5. After package creation, click on the link to verify the .appx files have been created
-![](./media/1_createapppackages5.png)
-
-Once you've confirmed the appx file has been created, you can move onto the next lab: [2 - Integrating Windows IoT with Azure](./Lab02.md)
+Appx ファイルが作成されたことを確認したら、次のラボ「[2 - Windows IoT を Azure と統合する](./Lab02.md)」に進むことができます。 
