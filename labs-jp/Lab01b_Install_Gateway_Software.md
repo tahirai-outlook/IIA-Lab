@@ -49,7 +49,7 @@ Windows 10 IoT Core センサー デバイスおよびソフトウェアが正�
 
 ![](media/lab01/AwareThings.SensorData.jpg)
 
-次に、「**ラボ 2 – デバイスを Azure IoT Central** **に接続する** ([デバイスを Azure IoT Central に接続する)](./Lab02.md)」に進みます。
+次に、「**ラボ 2 – デバイスを Azure IoT Central** **に接続する** ([デバイスを Azure IoT Central に接続する)](./02_Lab02.md)」に進みます。
 
 ## SensorTile のトラブルシューティング
 
